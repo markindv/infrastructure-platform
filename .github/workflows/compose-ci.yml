@@ -1,0 +1,28 @@
+name: Compose CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  validate-compose:
+    name: Validate Docker Compose
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check required files
+        run: |
+          test -f compose/docker-compose.yml
+          test -f compose/.env.example
+          test -f compose/README.md
+
+      - name: Validate Docker Compose config
+        run: |
+          cd compose
+          cp .env.example .env
+          docker compose config
