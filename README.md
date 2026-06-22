@@ -1,47 +1,75 @@
 # Infrastructure Platform
 
-My first DevOps project built with Docker, Docker Compose, Nginx, Git, and GitHub.
+Infrastructure Platform is a personal DevOps project focused on building a production-style infrastructure stack step by step.
 
-## Project Overview
+The repository is designed as a growing platform where each module represents a separate infrastructure component.
 
-This project demonstrates:
+## Current Modules
 
-* Building a custom Docker image
-* Running containers with Docker Compose
-* Publishing a web page with Nginx
-* Version control with Git
-* Remote repository management with GitHub
+### Compose
 
-## Technologies
+A containerized environment built with:
 
-* Docker
-* Docker Compose
-* Nginx
-* Git
-* GitHub
+- Nginx
+- PostgreSQL 17
+- Docker Compose
+- Docker Volumes
+- Docker Networks
+- Environment Variables
+
+Features:
+
+- Multi-container deployment
+- Persistent PostgreSQL storage
+- Service communication through Docker Network
+- Configuration via .env
+- Data persistence validation
+
+Location:
+
+```text
+compose/READMI.md
+```
+
+## Planned Modules
+
+### CI/CD
+
+Future implementation:
+
+- GitHub Actions
+- Automated testing
+- Automated deployment
+
+### Monitoring
+
+Future implementation:
+
+- Prometheus
+- Grafana
+- Metrics collection
+- Alerting
+
+### Terraform
+
+Future implementation:
+
+- Infrastructure as Code
+- Cloud provisioning
+- Reusable modules
 
 ## Project Structure
 
 ```text
-.
-├── Dockerfile
-├── docker-compose.yml
-├── index.html
+infrastructure-platform/
+├── compose/
+├── ci-cd/
+├── monitoring/
+├── terraform/
 └── README.md
-```
-
-## Run the Project
-
-```bash
-docker compose up -d
-```
-
-Open in your browser:
-
-```text
-http://localhost:8080
 ```
 
 ## Author
 
 Dmitry Markin
+
