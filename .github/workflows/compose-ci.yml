@@ -26,3 +26,31 @@ jobs:
           cd compose
           cp .env.example .env
           docker compose config
+
+      - name: Start services
+        run: |
+          cd compose
+          docker compose up -d
+
+      - name: Smoke test Nginx
+        run: |
+          for i in {1..10}; do
+            if curl -s http://localhost:8080 | grep "Hello from Compose"; then
+              echo "Nginx is ready"
+              exit 0
+            fi
+
+            echo "Waiting for Nginx..."
+            sleep 3
+          done
+
+          echo "Nginx did not become ready"
+          cd compose
+          docker compose logs
+          exit 1
+
+      - name: Stop services
+        if: always()
+        run: |
+          cd compose
+          docker compose down
