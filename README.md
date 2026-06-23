@@ -1,3 +1,4 @@
+[![Compose CI](https://github.com/markindv/infrastructure-platform/actions/workflows/compose-ci.yml/badge.svg)](https://github.com/markindv/infrastructure-platform/actions/workflows/compose-ci.yml)
 # Infrastructure Platform
 
 Infrastructure Platform is a personal DevOps project focused on building a production-style infrastructure stack step by step.
