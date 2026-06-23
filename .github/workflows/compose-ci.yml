@@ -49,6 +49,12 @@ jobs:
           docker compose logs
           exit 1
 
+      - name: Show container logs
+        if: failure()
+        run: |
+          cd compose
+          docker compose logs
+
       - name: Stop services
         if: always()
         run: |
