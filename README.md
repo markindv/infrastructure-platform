@@ -29,7 +29,7 @@ Features:
 Location:
 
 ```text
-compose/READMI.md
+compose/README.md
 ```
 
 ## Planned Modules
